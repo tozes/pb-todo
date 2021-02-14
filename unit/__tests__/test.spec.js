@@ -1,4 +1,4 @@
-const swclient = require(`../js/sw-client.js`);
+const swclient = require("../js/sw-client.js");
 const { matchers } = require("jest-json-schema");
 expect.extend(matchers);
 
@@ -21,32 +21,32 @@ const schema = {
   }
 };
 
-describe(`Get all planets function`, () => {
-  it(`Amount of planets is 60`, async () => {
+describe("Get all planets function", () => {
+  it("Amount of planets is 60", async () => {
     expect.assertions(1);
     const data = await swclient.getAllPlanets();
     expect(data.count).toEqual(60);
   });
 
-  it(`Next page is #2`, async () => {
+  it("Next page is #2", async () => {
     expect.assertions(1);
     const data = await swclient.getAllPlanets();
-    expect(data.next).toContain(`page=2`);
+    expect(data.next).toContain("page=2");
   });
 
-  it(`Previous page is null`, async () => {
+  it("Previous page is null", async () => {
     expect.assertions(1);
     const data = await swclient.getAllPlanets();
     expect(data.previous).toBeNull();
   });
 
-  it(`There are 10 planets per page`, async () => {
+  it("There are 10 planets per page", async () => {
     expect.assertions(1);
     const data = await swclient.getAllPlanets();
     expect(data.results.length).toEqual(10);
   });
 
-  it(`Each planet has a valid schema`, async () => {
+  it("Each planet has a valid schema", async () => {
     expect.assertions(10);
     const data = await swclient.getAllPlanets();
     data.results.forEach(planet => {
@@ -55,32 +55,32 @@ describe(`Get all planets function`, () => {
   });
 });
 
-describe(`Get planet function`, () => {
-  it(`Passing ID number returns correct planet name`, async () => {
+describe("Get planet function", () => {
+  it("Passing ID number returns correct planet name", async () => {
     expect.assertions(1);
     const data = await swclient.getPlanet(12);
-    expect(data.name).toEqual(`Utapau`);
+    expect(data.name).toEqual("Utapau");
   });
 
-  it(`Passing wrong ID number returns Not found message`, async () => {
+  it("Passing wrong ID number returns Not found message", async () => {
     expect.assertions(1);
-    const data = await swclient.getPlanet(`test`);
+    const data = await swclient.getPlanet("test");
     expect(data.detail).toEqual("Not found");
   });
 
-  it(`Passing any ID number returns Not found message`, async () => {
+  it("Passing any ID number returns Not found message", async () => {
     expect.assertions(1);
     const data = await swclient.getPlanet();
     expect(data.detail).toEqual("Not found");
   });
 
-  it(`Passing empty ID number returns undefined`, async () => {
+  it("Passing empty ID number returns undefined", async () => {
     expect.assertions(1);
     const data = await swclient.getPlanet(" ");
     expect(data.detail).toEqual(undefined);
   });
 
-  it(`A planet has a valid schema`, async () => {
+  it("A planet has a valid schema", async () => {
     expect.assertions(1);
     const data = await swclient.getPlanet(23);
     expect(data).toMatchSchema(schema);
