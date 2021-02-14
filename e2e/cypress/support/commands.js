@@ -11,7 +11,6 @@ Cypress.Commands.add("eraseItem", text => {
 });
 
 Cypress.Commands.add("completeItem", item => {
-  // cy.addItem(item);
   cy.get(".todo-list")
     .contains(item)
     .siblings(`.toggle`)
@@ -19,7 +18,6 @@ Cypress.Commands.add("completeItem", item => {
 });
 
 Cypress.Commands.add("unCompleteItem", item => {
-  //cy.addItem(item);
   cy.get(".todo-list")
     .contains(item)
     .siblings(`.toggle`)
