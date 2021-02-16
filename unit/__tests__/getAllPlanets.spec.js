@@ -559,7 +559,7 @@ describe("Get all planets function", () => {
 
 describe("Get planet function", () => {
   beforeEach(() => {
-    // fetch.resetMocks();
+    fetch.resetMocks();
   });
 
   it("Endpoint with specific argument", async () => {
