@@ -75,7 +75,7 @@ describe("Get planet function", () => {
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
-  it.only("Passing wrong ID number returns Not found message", async () => {
+  it("Passing wrong ID number returns Not found message", async () => {
     fetch.mockResponseOnce(
       JSON.stringify({
         detail: "Not found"
