@@ -4,7 +4,7 @@
 
 ---
 
-### 2. Write unit tests for the `sw-client.js` library using [Jest](https://jestjs.io/)
+### 3. Write unit tests for the `sw-client.js` library using [Jest](https://jestjs.io/)
 
 The goal of this exercise is to write unit tests for the Star Wars API client.
 The client can be found in `./js/sw-client.js` and by now it should have three funtions:
