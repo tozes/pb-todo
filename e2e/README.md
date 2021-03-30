@@ -10,9 +10,7 @@ Please focus on the quality of your solution, rather than trying to add a ton of
 and aiming for full coverage will take more of your time without adding more value. We care mostly about how you approach the problem,
 how you structure your code and the overall quality of the solution.
 
-Feel free to get creative and come up with something cool beyond what's defined by the assignment if you want to impress us 🚀
-
-Bonus points if you can configure the tests to run on a CI provider of your choice.
+Although it's not required, feel free to get creative and come up with something cool beyond what's defined by this assignment!
 
 ## Prerequisites
 
