@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "plugin:cypress-dev/general",
-    "plugin:cypress-dev/tests"
-  ],
+  "extends": ["plugin:cypress-dev/general", "plugin:cypress-dev/tests"],
   "globals": {
     "cy": true,
     "Cypress": true
