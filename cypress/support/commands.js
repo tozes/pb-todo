@@ -11,3 +11,6 @@
 // https://on.cypress.io/commands
 // ***********************************************
 
+Cypress.Commands.add("getByDataTest", (str) => {
+  return cy.get(`[data-test="${str}"]`);
+});
